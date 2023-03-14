@@ -1,0 +1,15 @@
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\bin\Debug\net6.0\OlavTheFirst.exe
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\bin\Debug\net6.0\OlavTheFirst.deps.json
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\bin\Debug\net6.0\OlavTheFirst.runtimeconfig.json
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\bin\Debug\net6.0\OlavTheFirst.dll
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\bin\Debug\net6.0\OlavTheFirst.pdb
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.csproj.AssemblyReference.cache
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.GeneratedMSBuildEditorConfig.editorconfig
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.AssemblyInfoInputs.cache
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.AssemblyInfo.cs
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.csproj.CoreCompileInputs.cache
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.dll
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\refint\OlavTheFirst.dll
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.pdb
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\OlavTheFirst.genruntimeconfig.cache
+C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\obj\Debug\net6.0\ref\OlavTheFirst.dll
