@@ -19,7 +19,7 @@ namespace OlavTheFirst
         public Monster()
         {
             name = "The Blob";
-            health = 6;
+            health = 6; 
             atk = 1;
             alive = true;
         }

@@ -19,7 +19,7 @@ class Program
         else
         {
             myPlayer.setFirstName();
-            myPlayer.setFirstClass();
+            myPlayer.setFirstClass(); 
         }
 
         getFullRaport(myPlayer);

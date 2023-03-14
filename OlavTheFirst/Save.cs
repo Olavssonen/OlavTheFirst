@@ -16,7 +16,7 @@ namespace OlavTheFirst
             {
                 writer.WriteLine(player.getName());
                 writer.WriteLine(player.getClass());
-
+                 
 
             }
 

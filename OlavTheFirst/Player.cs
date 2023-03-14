@@ -14,7 +14,7 @@
             //setFirstClass();
             health = 10;
             atk = 2;
-
+             
 
         }
 

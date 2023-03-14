@@ -17,7 +17,7 @@ namespace OlavTheFirst
         public Battle(Player newPlayer, Monster newMonster) {
             player = newPlayer;
             monster = newMonster;
-            round = 1;
+            round = 1 ;
             battle();
 
         }
