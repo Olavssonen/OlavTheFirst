@@ -11,4 +11,10 @@
     <Folder Include="Texts\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Texts\IntroText.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
