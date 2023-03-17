@@ -6,14 +6,18 @@
         private int health;
         private int atk;
         private String playerClass;
+        private Class theClass;
+        private int exp;
+        private int lvl;
+        Boolean alive;
 
         public Player()
         {
 
             //setFirstName();
             //setFirstClass();
-            health = 10;
-            atk = 2;
+            //health = 10;
+            //atk = 2;
              
 
         }
@@ -33,8 +37,9 @@
 
         public void setFirstName()
         {
-            Console.WriteLine("What is your name?");
+            Console.WriteLine("Your name:");
             String input = Console.ReadLine();
+            Console.WriteLine();
             if (input != null)
             {
                 name = input;
@@ -50,12 +55,21 @@
 
         public void setName(String newName)
         {
-
+            name=newName;
         }
 
         public void setClass(String newClass)
         {
-            playerClass = newClass;
+            //playerClass = theClass.setClass(newClass)
+            theClass = new Class(newClass);
+        }
+
+        public void setNewClass(String newClass)
+        {
+            //playerClass = theClass.setClass(newClass)
+            theClass = new Class(newClass);
+            health = theClass.getStartingHealth();
+            atk = theClass.getStartingStr();
         }
 
         public void setFirstClass()
@@ -64,13 +78,18 @@
             Console.WriteLine("1. Warrior");
             Console.WriteLine("2. Ranger");
             String input = Console.ReadLine();
+            Console.WriteLine();
             if (input == "1")
             {
-                playerClass = "Warrior";
+                //playerClass = "Warrior";
+                //theClass = new Class("Warrior");
+                setNewClass("Warrior");
             }
             else if (input == "2")
             {
-                playerClass = "Ranger";
+                //playerClass = "Ranger";
+                //theClass = new Class("Ranger");
+                setNewClass("Ranger");
             }
             else
             {
@@ -78,6 +97,16 @@
                 setFirstClass();
             }
 
+        }
+
+        public Boolean checkIfAlive()
+        {
+            if (health > 0)
+            {
+                return true;
+            }
+
+            else return false;
         }
 
         public int getHealth()
@@ -89,6 +118,11 @@
         {
             return atk;
         }
+
+        public void setAtk(int newAtk)
+        {
+            atk = newAtk;
+        }
         public void sethealth(int newHealth)
         {
             health = newHealth;
@@ -96,7 +130,12 @@
 
         public String getClass()
         {
-            return playerClass;
+            return theClass.getPlayerClass();
+        }
+
+        public void loseHealth(int dmg)
+        {
+            health -= dmg;
         }
 
 

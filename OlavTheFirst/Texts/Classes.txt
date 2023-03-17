@@ -1,0 +1,6 @@
+Warrior
+10
+2
+Ranger
+8
+4

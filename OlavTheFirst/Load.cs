@@ -14,6 +14,9 @@ namespace OlavTheFirst
 
             player.setName(lines[0]);
             player.setClass(lines[1]);
+            player.sethealth(Int16.Parse(lines[2]));
+            player.setAtk(Int16.Parse(lines[3]));
+            
             
         }
     }
