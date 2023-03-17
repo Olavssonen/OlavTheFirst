@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlavTheFirst
+﻿namespace OlavTheFirst
 {
     internal class Load
     {
-        public Load(Player player) {
+        public Load(Player player)
+        {
             //String text = System.IO.File.ReadAllText(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\IntroText.txt");
             String[] lines = System.IO.File.ReadAllLines(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt");
 
@@ -16,9 +11,7 @@ namespace OlavTheFirst
             player.setClass(lines[1]);
             player.sethealth(Int16.Parse(lines[2]));
             player.setAtk(Int16.Parse(lines[3]));
-            
-            
+
         }
     }
 }
- 

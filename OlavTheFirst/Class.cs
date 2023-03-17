@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlavTheFirst
+﻿namespace OlavTheFirst
 {
     internal class Class
     {
@@ -13,14 +7,16 @@ namespace OlavTheFirst
         private int health;
         private int str;
 
-        public Class(String newPlayerClass) { 
+        public Class(String newPlayerClass)
+        {
             className = newPlayerClass;
-            
 
-            if (className == "Warrior") {
+
+            if (className == "Warrior")
+            {
 
                 setStats(0);
-            
+
             }
             else if (className == "Ranger")
             {
@@ -29,18 +25,13 @@ namespace OlavTheFirst
 
         }
 
+        //Read the Classes.txt to get starting stats of different classes
         private void setStats(int line)
         {
             String[] lines = System.IO.File.ReadAllLines(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Classes.txt");
 
-            health = Int16.Parse(lines[line+1]);
-            str = Int16.Parse(lines[line+2]);
-
-            Console.WriteLine("Your health is: " + health);
-            Console.WriteLine("Your strength is: " + str);
-
-
-
+            health = Int16.Parse(lines[line + 1]);
+            str = Int16.Parse(lines[line + 2]);
 
         }
 
@@ -65,6 +56,6 @@ namespace OlavTheFirst
             return str;
         }
 
-        
+
     }
 }

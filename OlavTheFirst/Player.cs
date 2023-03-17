@@ -14,11 +14,6 @@
         public Player()
         {
 
-            //setFirstName();
-            //setFirstClass();
-            //health = 10;
-            //atk = 2;
-             
 
         }
 
@@ -29,12 +24,7 @@
             playerClass = newPlayerClass;
         }
 
-
-        public String getName()
-        {
-            return name;
-        }
-
+        //Sets the chosen name of the player from input
         public void setFirstName()
         {
             Console.WriteLine("Your name:");
@@ -53,25 +43,7 @@
 
         }
 
-        public void setName(String newName)
-        {
-            name=newName;
-        }
-
-        public void setClass(String newClass)
-        {
-            //playerClass = theClass.setClass(newClass)
-            theClass = new Class(newClass);
-        }
-
-        public void setNewClass(String newClass)
-        {
-            //playerClass = theClass.setClass(newClass)
-            theClass = new Class(newClass);
-            health = theClass.getStartingHealth();
-            atk = theClass.getStartingStr();
-        }
-
+        //Make the player choose a class the first time the game is played
         public void setFirstClass()
         {
             Console.WriteLine("What is your class?");
@@ -99,6 +71,16 @@
 
         }
 
+        //Sets the basic stats for choosen class
+        public void setNewClass(String newClass)
+        {
+            //playerClass = theClass.setClass(newClass)
+            theClass = new Class(newClass);
+            health = theClass.getStartingHealth();
+            atk = theClass.getStartingStr();
+        }
+
+        //Check if player is alive. Returns true if alive.
         public Boolean checkIfAlive()
         {
             if (health > 0)
@@ -107,6 +89,22 @@
             }
 
             else return false;
+        }
+
+        public void setName(String newName)
+        {
+            name = newName;
+        }
+
+        public void setClass(String newClass)
+        {
+            //playerClass = theClass.setClass(newClass)
+            theClass = new Class(newClass);
+        }
+
+        public String getName()
+        {
+            return name;
         }
 
         public int getHealth()

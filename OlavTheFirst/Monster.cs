@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlavTheFirst
+﻿namespace OlavTheFirst
 {
 
 
@@ -19,7 +13,7 @@ namespace OlavTheFirst
         public Monster()
         {
             name = "The Blob";
-            health = 6; 
+            health = 6;
             atk = 1;
             alive = true;
         }
@@ -38,17 +32,20 @@ namespace OlavTheFirst
         {
             return health;
         }
-        public int getAtk() {
-            return atk;        
+        public int getAtk()
+        {
+            return atk;
         }
 
+        //Checks if the monster is alive. Returns false if dead
         public Boolean checkIfAlive()
         {
-            if (health > 0) { 
-                return true; 
+            if (health > 0)
+            {
+                return true;
             }
 
-            else return false; 
+            else return false;
         }
 
     }

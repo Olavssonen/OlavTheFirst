@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlavTheFirst
+﻿namespace OlavTheFirst
 {
 
     internal class Battle
@@ -15,36 +9,35 @@ namespace OlavTheFirst
         int round;
         Boolean someoneDead;
 
-        public Battle(Player newPlayer, Monster newMonster) {
+        public Battle(Player newPlayer, Monster newMonster)
+        {
             player = newPlayer;
             monster = newMonster;
-            round = 1 ;
+            round = 1;
             battle();
 
         }
 
-        private void battle() {
+        //Solves the battle
+        private void battle()
+        {
 
             Console.WriteLine("A battle start!");
             Console.WriteLine(player.getName() + " - VS - " + monster.getName());
             Console.WriteLine();
-            
+
+            while (checkIfSomeoneDead() == false)
+            {
 
 
-            while (checkIfSomeoneDead() == false) {
-
-                 
                 Console.WriteLine("Round " + round);
                 aRound(player, monster);
                 round++;
-                
-            }
 
-            
-            
-        
+            }
         }
 
+        //Solves one round of battle
         private void aRound(Player player, Monster monster)
         {
             Console.WriteLine(player.getName() + " attacks with " + player.getAtk());
@@ -60,16 +53,20 @@ namespace OlavTheFirst
             Console.WriteLine();
         }
 
+        //Checks if someone in the battle is dead. Returns true if someone is dead.
         private Boolean checkIfSomeoneDead()
         {
-            if (monster.checkIfAlive() == false) {
+            if (monster.checkIfAlive() == false)
+            {
                 Console.WriteLine("You killed the " + monster.getName() + "!");
                 return true;
-            }else if (player.checkIfAlive() == false)
+            }
+            else if (player.checkIfAlive() == false)
             {
-                
+
                 return true;
-            }return false;
+            }
+            return false;
 
         }
     }
