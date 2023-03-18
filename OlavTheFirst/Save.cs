@@ -5,13 +5,20 @@
 
         public Save(Player player)
         {
-
-            using (StreamWriter writer = new StreamWriter(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt"))
+            string currentPath = Directory.GetCurrentDirectory();
+            Console.WriteLine(currentPath + @"\Texts\Save.txt");
+            //@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt"
+            using (StreamWriter writer = new StreamWriter(currentPath + @"\Texts\Save.txt"))
             {
+
+                
                 writer.WriteLine(player.getName());
                 writer.WriteLine(player.getClass());
+                writer.WriteLine(player.getLvl());
                 writer.WriteLine(player.getHealth());
                 writer.WriteLine(player.getAtk());
+                writer.WriteLine(player.getExp());
+
 
             }
         }

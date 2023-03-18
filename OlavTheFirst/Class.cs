@@ -20,7 +20,7 @@
             }
             else if (className == "Ranger")
             {
-                setStats(3);
+                setStats(9);
             }
 
         }
@@ -32,6 +32,7 @@
 
             health = Int16.Parse(lines[line + 1]);
             str = Int16.Parse(lines[line + 2]);
+            
 
         }
 

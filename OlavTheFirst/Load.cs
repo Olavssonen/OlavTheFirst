@@ -5,12 +5,21 @@
         public Load(Player player)
         {
             //String text = System.IO.File.ReadAllText(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\IntroText.txt");
-            String[] lines = System.IO.File.ReadAllLines(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt");
+
+            string currentPath = Directory.GetCurrentDirectory();
+            Console.WriteLine(currentPath + @"\Texts\Save.txt");
+            String[] lines = System.IO.File.ReadAllLines(currentPath + @"\Texts\Save.txt");
+            
 
             player.setName(lines[0]);
             player.setClass(lines[1]);
-            player.sethealth(Int16.Parse(lines[2]));
-            player.setAtk(Int16.Parse(lines[3]));
+            player.setLvl(Int16.Parse(lines[2]));
+            player.setHealth(Int16.Parse(lines[3]));
+            player.setAtk(Int16.Parse(lines[4]));
+            player.setExp(Int16.Parse(lines[5]));
+
+            player.setNextExpLvl();
+
 
         }
     }

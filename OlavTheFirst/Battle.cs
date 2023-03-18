@@ -59,6 +59,8 @@
             if (monster.checkIfAlive() == false)
             {
                 Console.WriteLine("You killed the " + monster.getName() + "!");
+                player.recieveExp(monster.getExp());
+                player.checkIfLvlUp();
                 return true;
             }
             else if (player.checkIfAlive() == false)

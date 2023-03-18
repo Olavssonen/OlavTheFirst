@@ -11,12 +11,17 @@ class Program
 
         Player myPlayer = new Player();
 
-        if (File.Exists(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt"))
+        string currentPath = Directory.GetCurrentDirectory();
+        Console.WriteLine(currentPath + @"\Texts\Save.txt");
+        //@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt"
+
+        if (File.Exists(currentPath + @"\Texts\Save.txt"))
         {
             Load load = new Load(myPlayer);
         }
         else
         {
+            Console.WriteLine(currentPath + @"\Texts");
             Console.WriteLine(getIntroText());
             Console.WriteLine();
             myPlayer.setFirstName();
@@ -35,7 +40,11 @@ class Program
         Console.WriteLine("This is your character:");
         Console.WriteLine("Name: " + myPlayer.getName());
         Console.WriteLine("Class: " + myPlayer.getClass());
+        Console.WriteLine("Level: " + myPlayer.getLvl());
         Console.WriteLine("HP: " + myPlayer.getHealth());
+        Console.WriteLine("Attack: " + myPlayer.getAtk());
+        Console.WriteLine("Experience: " + myPlayer.getExp());
+        Console.WriteLine("Experience to next level: " + myPlayer.getNextExpLvl());
         Console.WriteLine();
 
     }

@@ -8,6 +8,7 @@
         string name;
         int health;
         int atk;
+        int exp;
         Boolean alive;
 
         public Monster()
@@ -15,12 +16,18 @@
             name = "The Blob";
             health = 6;
             atk = 1;
+            exp = 5;
             alive = true;
         }
 
         public String getName()
         {
             return name;
+        }
+
+        public int getExp()
+        {
+            return exp;
         }
 
         public void loseHealth(int dmg)

@@ -1,4 +1,6 @@
-﻿namespace OlavTheFirst
+﻿using System.Linq.Expressions;
+
+namespace OlavTheFirst
 {
     internal class Player
     {
@@ -9,6 +11,8 @@
         private Class theClass;
         private int exp;
         private int lvl;
+        private int skillpoints;
+        private int expToNextLvl;
         Boolean alive;
 
         public Player()
@@ -78,6 +82,24 @@
             theClass = new Class(newClass);
             health = theClass.getStartingHealth();
             atk = theClass.getStartingStr();
+            exp = 0;
+            lvl = 1;
+            setNextExpLvl();
+            
+        }
+
+        //Sets the next exp amount needed to lvl up
+        public void setNextExpLvl()
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String[] lines = System.IO.File.ReadAllLines(currentPath + @"\Texts\Levels.txt");
+            expToNextLvl =+ Int16.Parse(lines[lvl - 1]);
+        }
+
+        //returns remainging exp needed to lvl up 
+        public int getNextExpLvl()
+        {
+            return expToNextLvl-exp;
         }
 
         //Check if player is alive. Returns true if alive.
@@ -96,10 +118,55 @@
             name = newName;
         }
 
+        public void recieveExp(int newExp)
+        {
+            //Console.WriteLine("EXP before " + exp);
+            exp += newExp;
+            //Console.WriteLine("EXP after " + exp);
+        }
+
+        public int getExp()
+        {
+            return exp;
+        }
+
         public void setClass(String newClass)
         {
             //playerClass = theClass.setClass(newClass)
             theClass = new Class(newClass);
+        }
+
+        public void lvlingUp()
+        {
+            lvl++;
+            LevelUp levelUp = new LevelUp(this);
+            setNextExpLvl();
+        }
+
+        public void checkIfLvlUp()
+        {
+            if(exp >= expToNextLvl)
+            {
+                lvlingUp();
+            }
+            
+        }
+
+        public void setLvl(int newLvl)
+        {
+            lvl = newLvl;
+        }
+
+        public void setExp(int newExp)
+        {
+            exp = newExp;
+        }
+
+
+
+        public int getLvl()
+        {
+            return lvl;
         }
 
         public String getName()
@@ -121,7 +188,8 @@
         {
             atk = newAtk;
         }
-        public void sethealth(int newHealth)
+
+        public void setHealth(int newHealth)
         {
             health = newHealth;
         }
