@@ -28,10 +28,8 @@
 
             while (checkIfSomeoneDead() == false)
             {
-
-
-                Console.WriteLine("Round " + round);
-                aRound(player, monster);
+                
+                battleMenu();
                 round++;
 
             }
@@ -40,6 +38,8 @@
         //Solves one round of battle
         private void aRound(Player player, Monster monster)
         {
+
+            Console.WriteLine("Round " + round);
             Console.WriteLine(player.getName() + " attacks with " + player.getAtk());
             monster.loseHealth(player.getAtk());
             Console.WriteLine(monster.getName() + " have " + monster.getHealth() + " health left");
@@ -70,6 +70,41 @@
             }
             return false;
 
+        }
+
+        private void battleMenu()
+        {
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine("What do you want to do?");
+            Console.WriteLine("1. Attack");
+            Console.WriteLine("2. Abilities");
+            Console.WriteLine("3. Items");
+            Console.WriteLine("4. Run");
+            String input = Console.ReadLine();
+            Console.WriteLine();
+            if (input == "1")
+            {
+                aRound(player, monster);
+            }
+            else if (input == "2")
+            {
+                Console.WriteLine("Not yet implemented :(");
+                battleMenu();
+            }
+            else if (input == "3")
+            {
+                Console.WriteLine("Not yet implemented :(");
+                battleMenu();
+            }
+            else if (input == "4")
+            {
+                Console.WriteLine("Not yet implemented :(");
+                battleMenu();
+            }
+            else
+            {
+                battleMenu();
+            }
         }
     }
 }

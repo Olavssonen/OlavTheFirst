@@ -22,7 +22,11 @@ namespace OlavTheFirst
             Console.WriteLine("You have " + skillpoints + " skillpoints left");
             Console.WriteLine("You reached a new level!");
             Console.WriteLine("You are now level: " + player.getLvl());
-            Console.WriteLine("You recieved: " + player.getLvl() + " skillpoints");
+
+            Console.WriteLine("You health is replenished to: " + player.getMaxHealth());
+            player.getFullHealth();
+
+            Console.WriteLine("You recieved: 2 skillpoints");
             while (skillpoints > 0)
             {
                 Console.WriteLine("Test " + skillpoints + " skillpoints left");
@@ -60,6 +64,8 @@ namespace OlavTheFirst
 
             
         }
+
+        
 
         public void lvlUpAtk()
         {

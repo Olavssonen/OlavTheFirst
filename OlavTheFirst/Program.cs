@@ -12,12 +12,14 @@ class Program
         Player myPlayer = new Player();
 
         string currentPath = Directory.GetCurrentDirectory();
-        Console.WriteLine(currentPath + @"\Texts\Save.txt");
+        
         //@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\Save.txt"
 
         if (File.Exists(currentPath + @"\Texts\Save.txt"))
         {
             Load load = new Load(myPlayer);
+            Console.WriteLine("Welcome back, " + myPlayer.getName());
+            Console.WriteLine("");
         }
         else
         {
@@ -44,7 +46,16 @@ class Program
         Console.WriteLine("HP: " + myPlayer.getHealth());
         Console.WriteLine("Attack: " + myPlayer.getAtk());
         Console.WriteLine("Experience: " + myPlayer.getExp());
-        Console.WriteLine("Experience to next level: " + myPlayer.getNextExpLvl());
+
+        if(myPlayer.checkIfMaxLvl() == true)
+        {
+            Console.WriteLine("Experience to next level: You are MAX level");
+        }
+        else
+        {
+            Console.WriteLine("Experience to next level: " + myPlayer.getNextExpLvl());
+        }
+        
         Console.WriteLine();
 
     }

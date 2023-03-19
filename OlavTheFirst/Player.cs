@@ -6,6 +6,7 @@ namespace OlavTheFirst
     {
         private String name;
         private int health;
+        private int maxHealth;
         private int atk;
         private String playerClass;
         private Class theClass;
@@ -13,6 +14,7 @@ namespace OlavTheFirst
         private int lvl;
         private int skillpoints;
         private int expToNextLvl;
+        private int maxLvl;
         Boolean alive;
 
         public Player()
@@ -81,6 +83,7 @@ namespace OlavTheFirst
             //playerClass = theClass.setClass(newClass)
             theClass = new Class(newClass);
             health = theClass.getStartingHealth();
+            maxHealth = theClass.getStartingHealth();
             atk = theClass.getStartingStr();
             exp = 0;
             lvl = 1;
@@ -93,12 +96,23 @@ namespace OlavTheFirst
         {
             string currentPath = Directory.GetCurrentDirectory();
             String[] lines = System.IO.File.ReadAllLines(currentPath + @"\Texts\Levels.txt");
-            expToNextLvl =+ Int16.Parse(lines[lvl - 1]);
+            
+            maxLvl = lines.Length;
+            
+
+            if(checkIfMaxLvl() == false)
+            {
+                expToNextLvl = +Int16.Parse(lines[lvl - 1]);
+            }
+
+            
         }
+
 
         //returns remainging exp needed to lvl up 
         public int getNextExpLvl()
         {
+            
             return expToNextLvl-exp;
         }
 
@@ -112,10 +126,52 @@ namespace OlavTheFirst
 
             else return false;
         }
+        public void checkIfLvlUp()
+        {
+            if (exp >= expToNextLvl)
+            {
+                if (checkIfMaxLvl() == false)
+                {
+                    lvlingUp();
+                }
+                else
+                {
+                    Console.WriteLine("You are MAX LVL! :(");
+                }
+
+            }
+
+        }
+        public Boolean checkIfMaxLvl()
+        {
+            if(lvl <= maxLvl)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         public void setName(String newName)
         {
             name = newName;
+        }
+
+        public void setMaxHealth(int newMaxHealth)
+        {
+            maxHealth = newMaxHealth;
+        }
+
+        public void getFullHealth()
+        {
+            health = maxHealth;
+        }
+
+        public int getMaxHealth() 
+        { 
+            return maxHealth;
         }
 
         public void recieveExp(int newExp)
@@ -143,14 +199,7 @@ namespace OlavTheFirst
             setNextExpLvl();
         }
 
-        public void checkIfLvlUp()
-        {
-            if(exp >= expToNextLvl)
-            {
-                lvlingUp();
-            }
-            
-        }
+
 
         public void setLvl(int newLvl)
         {

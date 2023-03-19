@@ -7,7 +7,7 @@
             //String text = System.IO.File.ReadAllText(@"C:\C#\OlavTheFirst\OlavTheFirst\OlavTheFirst\Texts\IntroText.txt");
 
             string currentPath = Directory.GetCurrentDirectory();
-            Console.WriteLine(currentPath + @"\Texts\Save.txt");
+            
             String[] lines = System.IO.File.ReadAllLines(currentPath + @"\Texts\Save.txt");
             
 
@@ -17,6 +17,7 @@
             player.setHealth(Int16.Parse(lines[3]));
             player.setAtk(Int16.Parse(lines[4]));
             player.setExp(Int16.Parse(lines[5]));
+            player.setMaxHealth(Int16.Parse(lines[6]));
 
             player.setNextExpLvl();
 
